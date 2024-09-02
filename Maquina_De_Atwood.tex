@@ -1,0 +1,496 @@
+\documentclass[a4papper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[lmargin=3cm, tmargin=3cm, rmargin=2cm, bmargin=2cm]{geometry} 
+%formato que lembra a ABNT
+\usepackage[T1]{fontenc}%ajusta o texto que vem de outras fontes
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{placeins}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{Campinas\\\today}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+
+
+\begin{document}
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Logo_Unicamp__0.jpg}
+\section*{Universidade Estadual de Campinas}
+\vspace{2cm}
+Pedro Henrique Martins Belo - RA: 267809\\
+Maria Eduarda da Silva Faria - RA: 240953\\
+Pedro Henrique Lucarini - RA: 199139\\
+Matheus Henrique Aliberto de Francisco - RA: 239930\\
+\vspace{8cm}
+\section*{A Máquina de Atwood}
+\end{center}
+\newpage
+\section{Resumo}
+\vspace{0.10cm}
+\indent Neste experimento, estudamos algumas formas de coleta de dados e como  analisar dados por meio do uso da Máquina de Atwood. Como detalhado no texto adiante, a Máquina foi utilizada para obter o módulo da aceleração de dois cilindros de massas distintas, suspensos em um fio inextensível, bem como estimar o momento de inércia I e o torque {\large $\tau_a$} a que o fio exerce sobre a polia. A partir de relações conhecidas e dados coletados, realizamos uma análise com auxílio de ferramentas próprias e aparatos fornecidos pelo laboratório de Física, com o objetivo de concluir que os resultados obtidos são coerentes e de base confiável, pautados em métodos científicos rigorosos e racionais. Finalmente, incluímos as respectivas incertezas envolvidas durante todo o processo de confecção deste planejamento. 
+\vspace{0.10cm}
+\section{Objetivo}
+\vspace{0.10 cm}
+Desejamos comparar duas formas diferentes de obtenção e análise de dados, ambos utilizando o modelo da Máquina de Atwood. Desejamos obter o valor da aceleração da queda do cilindro de massa maior pelos seguintes métodos:\\
+\begin{itemize}
+    \item \textbf{Primeiro método:} medir o tempo total de queda e utilizá-lo na equação da aceleração média: $a = \frac{2h}{t^2}$
+    \item \textbf{Segundo método:} ajustar os dados de posição dos cilindros em função do tempo a uma equação quadrática: $y = \left(y_0 + \frac{a \cdot t_0^2}{2}\right) - a \cdot t_0 \cdot t + \frac{a \cdot t^2}{2}$,
+    sendo \(y_0\) a posição inicial do contrapeso, \(t_0\) o tempo que o peso começa a cair e \(a\) a aceleração.\\
+\end{itemize}
+Além disso, outro objetivo almejado é a obtenção do torque a e o momento de Inércia I pelo cálculo utilizando os dados de uma regressão linear. 
+\vspace{0.10 cm}
+\section{A Máquina de Atwood}
+\vspace{0.10 cm}
+A Máquina de Atwood é um experimento clássico de física utilizado para estudar a dinâmica do movimento uniformemente acelerado e as leis de Newton. Ela consiste em um sistema com duas massas  conectadas por uma corda que passa sobre uma polia de raio R e momento de inércia I. As massas são diferentes, e a diferença entre elas causa uma aceleração no sistema.
+\subsection{Princípio de Funcionamento}
+\vspace{0.10 cm}
+\begin{minipage}{0.6\textwidth} % 60% da largura da página para o texto
+    \begin{itemize}
+        \item \textbf{Duas Massas:} Denotadas como $m_1$ e $m_2$, onde $m_1 > m_2$.
+        \item \textbf{Corda e Polia:} A corda é inextensível posto sobre uma polia de raio $R$ e momento de inércia $I$.
+        \item \textbf{Torque e Aceleração:} A tração dos corpos produz um torque {\large $\tau_a$} que permite a polia girar em torno de um eixo fixo com aceleração angular constante ao soltar o corpo de massa $m_1$ de uma altura $h$ e com aceleração $a$.
+        \item \textbf{Relação entre as medidas:} A partir disto é possível estabelecer a seguinte relação: $\Delta m = \frac{a (I + MR^2)}{gR^2} + \frac{\tau_a}{gR}$,
+        onde \( g \) é a aceleração da gravidade, \( \Delta m = m_1 - m_2 \), e $M = m_1 + m_2$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth} % 35% da largura da página para a imagem
+    \centering
+    \includegraphics[width=0.5\linewidth]{Screenshot 2024-08-29 124856.png}
+    \
+    
+    \captionof{\footnotesize \textbf{Figura 1: }}{\footnotesize A Máquina de Atwood formada por uma polia de raio $R$ (1), duas caixas de massas $m_1$ e $m_2$ (2) e (3), respectivamente, e por um fio inextensível (4).}
+    \label{fig:maquina_atwood}
+\end{minipage}
+\\
+
+\vspace{0.15cm}
+\indent É importante mencionar que assumimos a inextensibilidade do barbante utilizado em todas as execuções do experimento, ou seja, ignoramos possiveis variações no comprimento do fio devivo a força de elongação exercida pelas massas e a possível variação de temperatura, bem como foi assumido que não há deslizamento entre o barbante e a polia, ou seja, existe atrito. Também foi desconsiderada
+a resistência do ar, visto que nenhum dos corpos atingem altas velocidades e foi tomado o movimento das massas ignorando qualquer tipo de inclinação com o eixo vertical, isto é, restrito à direção vertical.
+\vspace{0.10 cm}
+\section{Métodologia e Materiais}
+\vspace{0.10 cm}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{equipamento.png}
+        \\
+        \vspace{0.2cm}
+        \captionof{\footnotesize \textbf{Figura 1: }}{\footnotesize Aparato do experimento (Polia + Cilindros + Massas Auxiliares1).}
+        \label{fig:imagem1}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}[b]{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{tracker.png}
+        \\
+        \captionof{\footnotesize \textbf{Figura 2: }}{\footnotesize Exemplos de dados gerados pelo tracker.}
+        \label{fig:imagem2}
+    \end{minipage}  
+\end{figure}
+
+Para a realização do experimento, utilizamos uma polia de massa \( m = 1,9758 \, \text{kg} \), de raio \( R = (4,9 \pm  0,1) \times 10^{-2} \, \text{m} \), fixada em uma haste metálica a uma altura fixa \( H = (64,1 \pm 0,1) \times 10^{-2} \, \text{m} \) e que gira em um eixo de rotação fixo, paralelo ao solo. O diâmetro da polia foi medido com um paquímetro cuja menor medida é 0,05 mm. Dois cilindros de massas \( m_1 = 0,873 \pm 0,001 \, \text{kg} \) e \( m_2 = 0,872 \pm 0,001 \, \text{kg} \) foram conectados à polia por meio de um fio leve e considerado inextensível. Massas auxiliares denotadas de A até G foram utilizadas para conferir uma diferença de massa entre os cilindros, necessária para analisar o módulo da aceleração do sistema. 
+Na medida em que adicionavamos a massa, aumentávamos a aceleração e, consequente, diminuiamos o tempo de queda. As massas auxiliares são A: 0,021 kg, B: 0,032 kg, C: 0,044 kg, D: 0,060 kg, E: 0,081 kg, F: 0,114 kg, G: 0,165 kg, aferidas em uma balança digital cuja menor medida é 0,006 kg.
+\\
+\indent O experimento consistiu na queda dos cilindros, adicionando as massas auxiliares e observando a influência do campo gravitacional da Terra. O objetivo foi analisar o torque que a força de atrito do fio exerce sobre a polia, bem como o módulo da aceleração do sistema Polia + Cilindros + Massas auxiliares. Consideramos e analisamos o movimento de \(m_1\) e \(m_2\) ao longo do eixo definido pelo vetor \(y\), ignorando os demais. Além disso, consideramos que o fio não desliza sobre a polia, garantindo assim que os contrapesos se deslocam verticalmente uma altura \(h\) enquanto a polia gira um ângulo \(\large \theta = \frac{h}{R}\). 
+\\
+\indent Deste modo garantimos que a relação entre a diferença de massa dos corpos e a aceleração linear do movimento é dado pela equação $\Delta m = \frac{\large a (I + MR^2)}{gR^2} + \frac{\large \tau_a}{gR}$, 
+onde \(\Delta m\) é a diferença entre a massa total dos cilindros e pesos auxiliares, \(a\) é a aceleração, \(g\) é a constante gravitacional, \(R\) é o raio da polia, \(I\) é o momento de inércia da polia, \(M\) é a massa total do sistema (polia + cilindros + massas auxiliares) e \(\tau\) é o torque que a força de atrito do fio exerce sobre a polia.
+Identificamos que a variável independente no experimento é o \(\Delta m\), que pode ser variado de forma controlada pelo grupo em um conjunto de valores que permita uma análise mais precisa. A variável dependente neste fenômeno é a aceleração, que é diretamente proporcional à \(\Delta m\).
+\vspace{0.25cm}
+\section{Discussão e Resultados}
+\vspace{0.10 cm}
+Gravamos o movimento dos cilindros + pesos auxiliares em 7 configurações distintas, utilizando para tal um celular com taxa de captura de 30 quadros por segundo, correspondendo a uma resolução temporal de 0,03s. Durante o movimento, o cilindro $m_1$ sobe até o cilindro $m_2$ atingir a superfície, alcançando então uma altura $h = 61,5 \, \text{cm}$, medida da base do cilindro suspenso até a superfície. 
+Para obter as acelerações, utilizamos duas estratégias distintas. Primeiro, usamos o tempo médio de cada experimento marcado pelo cronômetro para inseri-lo na fórmula $a = \frac{2h}{t^2}$. Outro método empregado foi analisar a posição dos cilindros + pesos auxiliares em relação ao tempo com o uso do programa Tracker e, em sequência, com auxílio do software SciDavis, foi feito o ajuste polinomial da equação:$y = \left(y_0 + \frac{at_0^2}{2}\right) - a t_0 t + \frac{at^2}{2}$
+\vspace{0.10 cm}
+para descrever o movimento dos cilindros.
+Por fim, para obtermos o valor da inércia rotacional $I$ e o valor do torque $\tau$, utilizamos o software SciDavis e o Método dos Mínimos Quadrados (MMQ). Sendo:
+$A = \frac{I + MR^2}{gR^2} \quad \text{e} \quad B = \frac{\tau}{g R}$
+
+com $M = 3,7208 \, \text{kg}$ e $g = 9,8 \, \text{m/s}^2$, manipulamos a equação dada anteriormente para
+$\Delta m = A \cdot a + B$
+permitindo assim a aplicação do MMQ.
+\vspace{0.10 cm}
+\subsection{Analise de Dados}
+\subsubsection{Método 1}
+Neste método, calculamos a aceleração de uma maneira mais simples a partir da formúla $a=\frac{2h}{t^{2}}$, sendo h a altura do cilindro e t o tempo de queda em cada caso, conforme fomos adicionando as massas.
+Em seguida, utilizamos o software \textit{sciDavis} para analisar os dados coletados, então plotamos um grafico de aceleração $\times$ variação da massa  a fim de calcular os valores de \( I \) e \( \tau \) via Método dos Mínimos Quadrados (MMQ). A equação utilizada foi:$\Delta m = A \cdot a + B$, 
+onde $A = (1,92 \pm 0,16) \, \text{kg} \cdot \text{s}^2 / \text{m}$ e \ $B = (- 0,014 \pm 0,01) \text{kg}$
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.9\textwidth}
+        \includegraphics[width= 0.9\textwidth]{Regr.png}
+    \end{minipage}
+        \caption{Regressão linear do módulo da aceleração em função da diferença entre as massas com a respectiva barra de incerteza feita a partir dos dados da tabela 4.}
+        \label{fig:imagem1}  
+\end{figure}
+
+Substituindo na fórmula das respectivas variáveis e isolando o momento de inércia I e o torque $\tau$, temos:
+\[
+A = I + MR^2 ==> I = A - MR^2
+\]
+\[
+B = \tau g R ==> \tau = \frac{B}{gR}
+\]
+onde $M = 3,7208 \, \text{kg}$, $g = 9,8 \, \text{m/s}^2$ 
+\\
+Substituindo os valores obtidos para \( A \) e \( B \), obtemos: 
+$I = (3,62 \pm 0,38) \cdot 10^{-2}\text{kg} \cdot \text{m}^2$ e 
+$\tau = (- 6,72 \pm 4,8)\cdot10^{-3}\text{N} \cdot \text{m}$
+\\
+\subsubsection{Método 2}
+Neste método, analisamos a posição dos cilindros + pesos auxiliares em relação ao tempo com o uso do programa \textit{Tracker} e, em sequência, com auxílio do software \textit{SciDavis}, foi feito o ajuste polinomial da equação: $y = \left(y_0 + \frac{a t_0^2}{2}\right) - a \cdot t_0 \cdot t + \frac{a t^2}{2}$ 
+para descrever o movimento dos cilindros, que descreve as curvas dos gráficos abaixo:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 1.png}
+        \caption{Experimento 1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{experimento.png}
+        \caption{Experimento 2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 3.png}
+        \caption{Experimento 3}
+    \end{minipage}
+    \vspace{0.5cm}
+    \FloatBarrier
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 4.png}
+        \caption{Experimento 4}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 5.png}
+        \caption{Experimento 5}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 6.png}
+        \caption{Experimento 6}
+    \end{minipage}
+    \vspace{0.5cm}
+    \FloatBarrier
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experimento 7.png}
+        \caption{Experimento 7}
+    \end{minipage}
+\end{figure}
+\\
+
+(Os dados detalhados provenientes de cada gráfico estão disponíveis no Apêndice.)
+
+Consideramos, para uma análise mais sucinta: $A = \left(y_{0} + \frac{a t_0^2}{2}\right), B = - a t_{0} t$ e $C =  \frac{at^{2}}{2}$, onde A, B e C são dados pelo software \textit{SciDavis}. Substituindo os dados que obtemos através do software pudemos calcular a aceleração de cada caso, como mostrada na tabela abaixo:
+
+\begin{table}[h!]
+\centering
+\caption{Dados obtidos com o ajuste polinomial de todos os experimentos.
+}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Experimento} & \textbf{Aceleração ($m/s^{2}$)} & \textbf{$\Delta m (kg)$} \\
+\hline
+1 & \( 1,37282 \times 10^{-2} \pm 1,12851 \times 10^{-5} \) & 0,021 \\
+2 & \( 5,58276 \times 10^{-2} \pm 1,10125 \times 10^{-8} \) & 0,032 \\
+3 & \( 6,58933 \times 10^{-1} \pm 2,42697 \times 10^{-4} \) & 0,044 \\
+4 & \( 1,27112 \times 10^{-1} \pm 1,17969 \times 10^{-4} \) & 0,06 \\
+5 & \( 1,52757 \times 10^{-1} \pm 1,39436 \times 10^{-3} \) & 0,081 \\
+6 & \( 1,84610 \times 10^{-1} \pm 1,67388 \times 10^{-4} \) & 0,114 \\
+7 & \( 3,65378 \times 10^{-1} \pm 2,11790 \times 10^{-3} \) & 0,165 \\
+\hline
+\end{tabular}
+\end{table}
+E, em seguida, utilizamos novamente o sofware \textit{SciDavis} para fazer a regressão linear da aceleração em função da diferença de massa em cada experimento e assim obter a inércia e torque como no primeiro método.
+Podemos ver o gráfico da aceleração $(m/s^{2})$ por $\Delta m (kg)$, a seguir:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.9\textwidth}
+        \includegraphics[width= 0.9\textwidth]{regressao_modo2.png}
+    \end{minipage}
+        \caption{Regressão linear do módulo da aceleração em função da diferença entre as massas feita a partir dos dados da tabela 1.}
+        \label{fig:imagem1}  
+\end{figure}
+
+Utilizando a mesma formúla para a inércia I e o torque que foi utilizada no método I, pudemos substituir os valores, obtidos atraves do software, de \( A \) e \( B \), sendo eles: 
+$A=3,28190020096741\pm 0,000850169147386277$ e $B = -0,0491931858507822\pm 0,0000272054076880533$
+\\
+para calcular o valor da Inércia e do Torque. Sendo assim, a partir dos cálculos, obtemos:
+\\
+$I =6,829 \times 10^{-2} \pm 2,8 \times 10^{-4}  \text{kg} \cdot \text{m}^2$ e 
+$\tau = -2,362 \times 10^{-2} \pm 5 \times 10^{-5}\text{N} \cdot \text{m}$.
+
+\section{Conclusão}
+\vspace{0.10 cm}
+
+Comparando os resultados obtidos por ambos os métodos, observamos uma boa concordância nas medidas de aceleração. As pequenas discrepâncias entre os resultados podem ser atribuídas às incertezas associadas às medições, como a precisão dos instrumentos e as limitações do software na análise dos dados.
+
+O cálculo da inércia e do torque, baseado nas acelerações obtidas, também revelou consistência com os valores teóricos esperados. A análise das incertezas associadas à medição de massa, distância e tempo contribuiu para uma compreensão mais completa dos possíveis erros e suas influências nos resultados finais.
+
+
+A combinação dos métodos manual e computacional ofereceu uma abordagem abrangente para a análise da Máquina de Atwood. Ambos os métodos confirmaram que a aceleração dos corpos e as propriedades dinâmicas da máquina estão em concordância com as previsões teóricas. A integração dos resultados dos dois métodos não apenas validou a precisão dos cálculos, mas também destacou a importância da análise cuidadosa das incertezas e da utilização de ferramentas modernas para a validação experimental.
+
+Sendo assim, o experimento demonstrou a eficácia dos métodos utilizados na determinação da aceleração, inércia e torque da Máquina de Atwood.
+\vspace{0.10 cm}
+\newpage
+\section{Apêndice}
+\vspace{0.10 cm}
+\small
+\begin{table}[H]
+
+\subsection{Dados dos gráficos}
+
+Dados obtidos atráves do software \textit{SciDavis} relacionados aos gráficos do segundo método.
+
+% Experimento 1
+\textbf{Experimento 1}\\
+A = -0,0045797453 $\pm$ 0,0000252343 \\
+B = -0,0201335361 $\pm$ 0,0002502477 \\
+C = 0,6325957985 $\pm$ 0,0005200170 \\
+
+
+% Experimento 2
+\textbf{Experimento 2}\\
+A = -0,0000222616 $\pm$ 0,0000001304 \\
+B = -0,0287182475 $\pm$ 0,0006558573 \\
+C = 0,6612137413 $\pm$ 0,0006907567 \\
+
+
+% Experimento 3
+\textbf{Experimento 3}\\
+A = -0,0382688641 $\pm$ 0,0000738648 \\
+B = -0,0223580135 $\pm$ 0,0002925894 \\
+C = 0,6589327496 $\pm$ 0,0002426971 \\
+
+% Experimento 4
+\textbf{Experimento 4}\\
+A = -0,0546073817 $\pm$ 0,0002638447 \\
+B = -0,0247556398 $\pm$ 0,0008907189 \\
+C = 0,6783529911 $\pm$ 0,0006295611 \\
+
+% Experimento 5
+\textbf{Experimento 5}\\
+A = -0,0584672886 $\pm$ 0,0031179186 \\
+B = -0,0788977249 $\pm$ 0,0096671234 \\
+C = 0,6874046592 $\pm$ 0,0062745976 \\
+
+
+% Experimento 6
+\textbf{Experimento 6}\\
+A = -0,1161237131 $\pm$ 0,0003743919 \\
+B = 0,0694270175 $\pm$ 0,0010319129 \\
+C = 0,6565562204 $\pm$ 0,0005953073 \\
+
+
+% Experimento 7
+\textbf{Experimento 7}\\
+A = -0,1714944511 $\pm$ 0,0039567615 \\
+B = -0,0403857684 $\pm$ 0,0094634870 \\
+C = 0,6826159982 $\pm$ 0,0039567615 \\
+
+\newpage
+
+\subsection{Incertezas}
+\vspace{0.10 cm}
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+\hline
+\textbf{Fonte de incerteza} & \textbf{Símbolo} & \textbf{Incerteza-padrão} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\ \hline
+Instrumento de medição da altura & $\mu_h$ & $10^{-3}$ m & Triangular & Tipo B \\ \hline
+\multicolumn{5}{|l|}{Incerteza combinada: $\mu_h = 0,001$ m} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+\hline
+\textbf{Fonte de incerteza} & \textbf{Símbolo} & \textbf{Incerteza-padrão} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\ \hline
+Incerteza da posição da massa & $\mu_m$ & $4 \times 10^{-4}$ kg & Triangular & Tipo B \\ \hline
+\multicolumn{5}{|l|}{Incerteza combinada: $\mu_m = 4 \times 10^{-4}$ kg} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+\hline
+\textbf{Fonte de incerteza} & \textbf{Símbolo} & \textbf{Incerteza-padrão} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\ \hline
+Incerteza do frame inicial e final & $\mu_{f\!q}$ & 0,06 s & Triangular & Tipo B \\ \hline
+\multicolumn{5}{|l|}{Incerteza combinada: $\mu_{f\!q} = 0,06$ s} \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Incerteza da Aceleração}
+
+No método 1, obtemos a aceleração através da formula $a=\frac{2h}{t^{2}}$, logo para obter a incerteza combinada seguimos o calculo mostrado a seguir. Já no método 2, obtemos a incerteza através da formula de propagação de incertezas de multiplas variaveis levando em consideração o erro dado pelo software \textit{SciDavis}, para A, B e C, e as incertezas das outras variáveis.
+
+Exempleficando o Método 1, temos:
+A aceleração \( a \) foi calculada a partir da distância \( d \) percorrida e do tempo \( t \) gasto usando a fórmula:
+$a = \frac{2d}{t^2}$
+
+\subsubsection{Propagação de Incertezas}
+
+Para calcular a incerteza da aceleração \( \Delta a \), considerando as incertezas associadas à distância \( \Delta d \) e ao tempo \( \Delta t \), utilizamos a fórmula de propagação de incertezas:
+
+\[
+\Delta a = a \sqrt{ \left( \frac{\textit{U}_d}{d} \right)^2 + \left( 2 \frac{\textit{U}_t}{t} \right)^2 }
+\]
+
+onde temos:
+\\
+A incerteza na distância é dada pela incerteza da régua utilizada para medir a distância.
+\[
+\textit{U}_d = 0{,}001 \, \text{m}
+\]
+
+A incerteza no tempo é dada pela incerteza do cronômetro utilizado para medir o tempo.
+\[
+\textit{U}_t = 0{,}01 \, \text{s}
+\]
+
+
+Para calcular a incerteza padrão combinada da aceleração, consideramos as incertezas associadas à distância e ao tempo. 
+Onde: \( d \) é a distância medida,  \( t \) é o tempo medido,  \( \textit{U}_d \) é a incerteza na distância e \( \textit{U}_t \) é a incerteza no tempo.
+
+\vspace{0.10 cm}
+\subsection{Incerteza das Massas}
+
+Incerteza da balança: \(\textit{U}_b = 0{,}006 \, \text{kg}\) e incerteza do último dígito: \(\textit{U}_d = 0{,}001 \, \text{kg}\)
+
+A incerteza padrão combinada \(\textit{U}_c\) leva em consideração ambas as incertezas:
+
+\[
+\textit{U}_c = \sqrt{ (\textit{U}_d)^2 + (\textit{U}_b)^2 }
+\]
+
+Substituindo os valores:
+
+\[
+\textit{U}_c = \sqrt{ (0{,}001)^2 + (0{,}006)^2 }
+\]
+Logo, 
+\[
+\textit{U}_c \approx 0{,}00608 \, \text{kg}
+\]
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Massa (kg)} & \textbf{Incerteza combinada (kg)} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\
+\hline
+A: 0{,}021 & $\pm 0{,}00608$ & B & Retangular \\
+B: 0{,}032 & $\pm 0{,}00608$ & B & Retangular \\
+C: 0{,}044 & $\pm 0{,}00608$ & B & Retangular \\
+D: 0{,}060 & $\pm 0{,}00608$ & B & Retangular \\
+E: 0{,}081 & $\pm 0{,}00608$ & B & Retangular \\
+F: 0{,}114 & $\pm 0{,}00608$ & B & Retangular \\
+G: 0{,}165 & $\pm 0{,}00608$ & B & Retangular \\
+\hline
+\end{tabular}
+\caption{Massas e suas respectivas incertezas combinadas.}
+\end{table}
+
+\vspace{1cm} % Espaçamento entre as tabelas
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Fonte de incerteza} & \textbf{Símbolo} & \textbf{Incerteza-padrão (kg)} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\
+\hline
+Balança eletrônica & \(\textit{U}_b\) & $\pm 0{,}006$ & Retangular & B \\
+Último dígito & \(\textit{U}_d\) & $\pm 0{,}001$ & - & B \\
+Incerteza padrão combinada & \(\textit{U}_c\) & $\pm 0{,}00608$ & - & - \\
+\hline
+\end{tabular}
+\caption{Incertezas associadas à massa.}
+\end{table}
+
+\vspace{0.10 cm}
+\subsection{Incerteza do Momento de Inércia}
+\vspace{0.10 cm}
+\subsubsection{Propagação da Incerteza do Momento de Inércia}
+\vspace{0.10 cm}
+\begin{center}
+\begin{equation*}
+\boxed{
+\begin{aligned}
+u_l^2 &= \left(\frac{\partial I}{\partial k}\right)^2 u_k^2 + \left(\frac{\partial I}{\partial R}\right)^2 u_R^2 + \left(\frac{\partial I}{\partial M}\right)^2 u_M^2 \\
+u_l^2 &= (gR^2)^2 u_k^2 + \left[2R(kg - M)\right]^2 u_R^2 + \left(-R^2\right)^2 u_M^2
+\end{aligned}
+}
+\end{equation*}
+\end{center}
+\vspace{0.10 cm}
+
+\subsection{Incerteza do raio}
+
+Incerteza da paquímetro: \( R_p = 0{,}1 \times 10^{-2} \, \text{m} \) e incerteza do último dígito: \( R_d = 0{,}01 \times 10^{-2} \, \text{m} \)
+
+A incerteza padrão combinada \( R_c \) leva em consideração ambas as incertezas:
+
+\[
+R_c = \sqrt{ (R_p)^2 + (R_d)^2 }
+\]
+
+Substituindo os valores:
+
+\[
+R_c = \sqrt{ \left(0{,}1 \times 10^{-2}\right)^2 + \left(0{,}01 \times 10^{-2}\right)^2 }
+\]
+Logo, 
+\[
+R_c \approx 0{,}001 \, \text{m} = 0{,}01 \times 10^{-2} \, \text{m}
+\]
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Fonte de incerteza} & \textbf{Símbolo} & \textbf{Incerteza-padrão (m)} & \textbf{F.D.P} & \textbf{Tipo de avaliação} \\
+\hline
+Paquímetro & \(\textit{R}_p\) & $\pm 0,1 \times 10^{-2}$ & - & B  \\
+Último dígito & \(\textit{R}_d\) & $\pm 0,01 \times 10^{-2}$ & - & B \\
+Incerteza padrão combinada & \(\textit{R}_c\) & $\pm 0,01 \times 10^{-2}$ & - & - \\
+\hline
+\end{tabular}
+\caption{Incertezas associadas à massa.}
+\end{table}
+
+\subsection{Incerteza do Torque}
+\vspace{0.10 cm}
+\subsubsection{Propagação de Incerteza do Torque}
+\vspace{0.10 cm}
+\begin{center}
+\begin{equation*}
+\boxed{
+\begin{aligned}
+u_\tau^2 &= \left(\frac{\partial \tau}{\partial b}\right)^2 u_b^2 + \left(\frac{\partial \tau}{\partial R}\right)^2 u_R^2 \\
+u_\tau^2 &= \left(gR\right)^2 u_b^2 + \left(bg\right)^2 u_R^2
+\end{aligned}
+}
+\end{equation*}
+\end{center}
+\vspace{0.10 cm}
+\end{document}
