@@ -14,7 +14,7 @@
 <img src="https://github.com/user-attachments/assets/16a79a0e-238e-403f-b7e0-84c770e0d202" alt = "codigo" width="1200" height="200">
 
 
-## Calculo Numerico em Octave 📊
+## Física Experimental (LaTex, SciDavis, Tracker) 📊
 
 <div align='center'>
 
@@ -34,10 +34,9 @@ ___
 
 ___
 
-## Trabalho 1 📄
+## Relatório 1 - A Maquina de Atwood 📄
 
-
-O primeiro trabalho desta disciplina consistiu em testar os conhecimentos acerca dos primeiros topicos ministrado na mesma, topicos estes uque estavam dentro dos conteúdos abaixo.
+A Máquina de Atwood é um experimento clássico de física utilizado para estudar a dinâmica do movimento uniformemente acelerado e as leis de Newton. Ela consiste em um sistema com duas massas  conectadas por uma corda que passa sobre uma polia de raio R e momento de inércia I. As massas são diferentes, e a diferença entre elas causa uma aceleração no sistema.
 
 |Método de Newton |Método de diferenças centradas para aproximação de derivadas | Método da Bisecção | Implementação de códigos em Octave|
 |-------------------|------------------------------------------------------------|--------------------|-----------------------------------|
@@ -45,8 +44,9 @@ O primeiro trabalho desta disciplina consistiu em testar os conhecimentos acerca
 ## Tecnologias & Lingagens de Programação 🛠️ 
 
 Este projeto usas as seguintes tecnologias e linguagens de programação
-* <strong>Octave:</strong> O Octave possui muitas ferramentas para a solução numérica de problemas comuns de álgebra linear, para a determinação de raízes de equações, polinômios e integração de equações diferenciais e equações diferencias algébricas.
+* <strong>Tracker:</strong> O Tracker é um software livre de análise de vídeo e modelagem desenvolvido para o ensino de Física. O software é ligado ao projeto Open Source Physics. Os recursos disponíveis são o rastreamento da posição de um objeto, gráficos e dados de velocidade e aceleração de corpos em movimento, divisão do vídeo por quadros por segundo, calibração de medidas, entre outros
 * <strong>Latex:</strong> O LaTeX é uma plataforma de diagramação e preparação de textos, que simplifica a forma de formatá-los.Usamos para escrever todos os nossos trabalhos.
+* <strong>SciDavis:</strong> SciDAVis, um acrônimo para Scientific Data Analysis and Visualization é um programa de computador de código aberto e multiplataforma para a plotagem interativa de gráficos científicos e análise de dados. 
 
 <div align="center">
  
@@ -69,7 +69,7 @@ Você pode fazer download do trabahlo copiando o link abaixo.
 Você pode ter acesso a todos os arquivos deste repositório no seu computador, basta clonar ele no link abaixo.
 
 ```bash
-
+https://github.com/pedrohenrique3dk/Fisica_Experimental_II/tree/main/A%20M%C3%A1quina%20de%20Atwood
 ```
 
 </div>
@@ -83,7 +83,7 @@ Você pode ter acesso a todos os arquivos deste repositório no seu computador, 
 | PROBLEMAS PROPOSTOS|TRABALHO DESENVOLVIDO|
 |---------------------------------------------|--------------------------------------------------|
 
-<a href=""><img src="" alt = "codigo" width="400" height="250" max-width = 100%></a>&nbsp;&nbsp; <a href=""><img src="" alt = "codigo" width="400" height="250" max-width=100%></a>
+<a href=""><img src="" alt = "codigo" width="400" height="250" max-width = 100%></a>&nbsp;&nbsp; <a href="https://github.com/pedrohenrique3dk/Fisica_Experimental_II/blob/main/A%20M%C3%A1quina%20de%20Atwood/1__Relat%C3%B3rio_F_259.pdf"><img src="" alt = "codigo" width="400" height="250" max-width=100%></a>
 
 </div>
 
