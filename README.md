@@ -38,7 +38,7 @@ ___
 
 A Máquina de Atwood é um experimento clássico de física utilizado para estudar a dinâmica do movimento uniformemente acelerado e as leis de Newton. Ela consiste em um sistema com duas massas  conectadas por uma corda que passa sobre uma polia de raio R e momento de inércia I. As massas são diferentes, e a diferença entre elas causa uma aceleração no sistema.
 
-|Método de Newton |Método de diferenças centradas para aproximação de derivadas | Método da Bisecção | Implementação de códigos em Octave|
+|Extração de Dados com Tracker |Regressão Linear com SciDavis | Criação de Relatório em LaTex | Análise de Dados |
 |-------------------|------------------------------------------------------------|--------------------|-----------------------------------|
 
 ## Tecnologias & Lingagens de Programação 🛠️ 
