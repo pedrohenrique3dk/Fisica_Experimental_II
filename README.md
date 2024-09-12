@@ -63,7 +63,7 @@ Você pode fazer download do trabahlo copiando o link abaixo.
 
 
 ```bash
-
+https://github.com/pedrohenrique3dk/Fisica_Experimental_II/blob/main/A%20M%C3%A1quina%20de%20Atwood/1__Relat%C3%B3rio_F_259.pdf
 ```
 ## Todos os Arquivos do Repositório 🗃️
 Você pode ter acesso a todos os arquivos deste repositório no seu computador, basta clonar ele no link abaixo.
