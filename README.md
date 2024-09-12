@@ -85,6 +85,19 @@ https://github.com/pedrohenrique3dk/Fisica_Experimental_II/tree/main/A%20M%C3%A1
 
 <a href="https://github.com/user-attachments/files/16984877/F_259_lab_guide.pdf"><img src="https://github.com/user-attachments/assets/edbe871c-cfe6-4901-bb65-aa66ff0efc40" alt = "codigo" width="400" height="250" max-width = 100%></a>&nbsp;&nbsp; <a href="https://github.com/pedrohenrique3dk/Fisica_Experimental_II/blob/main/A%20M%C3%A1quina%20de%20Atwood/1__Relat%C3%B3rio_F_259.pdf"><img src="https://github.com/user-attachments/assets/75729878-8837-4d85-beda-568316ad3cdf" alt = "codigo" width="400" height="250" max-width=100%></a>
 
+|  A Maquina de Atwood - Partes do Relatório |
+|---------------------------------------------|
+
+
+___
+
+
+<img src="https://github.com/user-attachments/assets/ae599875-7bb8-4b88-a386-21868bbb6f40" alt = "codigo" width="400" height="250" max-width = 100%>&nbsp; &nbsp;<img src="https://github.com/user-attachments/assets/a4682c0b-3722-45a2-9ebc-167d94bd8dbd" alt = "codigo" width="400" height="250" max-width=100%>&nbsp;
+
+<img src="https://github.com/user-attachments/assets/9ee1b0c6-66b1-4d06-8ce5-ad68ccc97c26" alt = "codigo" width="400" height="250" max-width = 100%>&nbsp; &nbsp;<img src="https://github.com/user-attachments/assets/2671a637-866e-4efb-85c7-e1da24cd331c" alt = "codigo" width="400" height="250" max-width=100%>
+
 </div>
 
+
 ---
+
