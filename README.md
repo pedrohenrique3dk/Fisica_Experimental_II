@@ -83,7 +83,7 @@ https://github.com/pedrohenrique3dk/Fisica_Experimental_II/tree/main/A%20M%C3%A1
 | PROBLEMAS PROPOSTOS|TRABALHO DESENVOLVIDO|
 |---------------------------------------------|--------------------------------------------------|
 
-<a href=""><img src="" alt = "codigo" width="400" height="250" max-width = 100%></a>&nbsp;&nbsp; <a href="https://github.com/pedrohenrique3dk/Fisica_Experimental_II/blob/main/A%20M%C3%A1quina%20de%20Atwood/1__Relat%C3%B3rio_F_259.pdf"><img src="" alt = "codigo" width="400" height="250" max-width=100%></a>
+<a href="https://github.com/user-attachments/files/16984877/F_259_lab_guide.pdf"><img src="https://github.com/user-attachments/assets/edbe871c-cfe6-4901-bb65-aa66ff0efc40" alt = "codigo" width="400" height="250" max-width = 100%></a>&nbsp;&nbsp; <a href="https://github.com/pedrohenrique3dk/Fisica_Experimental_II/blob/main/A%20M%C3%A1quina%20de%20Atwood/1__Relat%C3%B3rio_F_259.pdf"><img src="https://github.com/user-attachments/assets/75729878-8837-4d85-beda-568316ad3cdf" alt = "codigo" width="400" height="250" max-width=100%></a>
 
 </div>
 
